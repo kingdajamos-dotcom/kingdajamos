@@ -1,0 +1,93 @@
+
+/* King Dajamos Studios - styles.css */
+/* Simple, responsive, cinematic Black & Gold theme */
+
+:root{
+  --gold: #d4af37;
+  --black: #0b0b0c;
+  --white: #ffffff;
+  --gray: #b5b5b5;
+  --maxwidth: 1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+a{color:inherit;text-decoration:none}
+.container{width:90%;max-width:var(--maxwidth);margin:0 auto}
+
+/* NAV */
+.nav{background:var(--black);color:var(--gold);position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav-inner{display:flex;align-items:center;gap:20px;padding:16px 0}
+.brand{font-weight:700;letter-spacing:1px}
+.menu{display:flex;gap:18px;margin-left:24px}
+.menu a{color:var(--gold);opacity:0.9;font-weight:600}
+.gold-btn, .outline-btn{display:inline-block;padding:12px 18px;border-radius:6px;font-weight:700;cursor:pointer}
+.gold-btn{background:var(--gold);color:var(--black);border:2px solid var(--gold);box-shadow:0 6px 18px rgba(212,175,55,0.12);}
+.outline-btn{border:2px solid var(--gold);color:var(--gold);background:transparent}
+
+/* responsive nav */
+.nav-toggle{display:none;background:transparent;border:0;color:var(--gold);font-size:20px;margin-left:auto}
+
+/* HERO */
+.section{padding:80px 0}
+.hero{min-height:86vh;display:flex;align-items:center;background:linear-gradient(180deg, rgba(11,11,12,0.96), rgba(11,11,12,0.96));color:var(--white)}
+.hero-inner{display:flex;gap:40px;align-items:center;justify-content:space-between}
+.hero-left{flex:1;max-width:650px}
+.hero-right{flex:1;display:flex;justify-content:center;align-items:center}
+.hero-card{width:380px;box-shadow:0 20px 60px rgba(0,0,0,0.55);overflow:hidden;border-radius:12px}
+.hero-card img{width:100%;display:block;opacity:0.95}
+.hero-title{font-size:44px;line-height:1.02;margin-bottom:12px;color:var(--white)}
+.hero-title .accent{color:var(--gold)}
+.hero-sub{color:var(--gray);margin-bottom:18px;font-weight:600}
+.btn-row{display:flex;gap:12px;margin-bottom:14px}
+.hero-note{color:var(--gray);margin-top:8px}
+
+/* ABOUT */
+.about-inner{display:flex;gap:30px;align-items:center}
+.about-left{flex:1}
+.about-right{flex:1;display:flex;justify-content:center}
+.about-right img{width:100%;max-width:420px;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px;list-style:none;color:var(--white)}
+
+/* SERVICES */
+.services h2, .portfolio h2, .about h2, .contact h2{font-size:28px;margin-bottom:8px}
+.heading-line{height:4px;width:68px;background:var(--gold);margin:12px 0 26px;border-radius:4px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.service-card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;min-height:140px;box-shadow:0 8px 30px rgba(0,0,0,0.35)}
+.service-card h3{color:var(--gold);margin-bottom:8px}
+
+/* PORTFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:10px}
+.portfolio-item{overflow:hidden;border-radius:8px;position:relative}
+.portfolio-item img{width:100%;display:block;transition:transform .6s ease;filter:grayscale(10%)}
+.portfolio-item:hover img{transform:scale(1.06);filter:grayscale(0)}
+
+/* CONTACT */
+.contact-inner{display:flex;gap:30px;align-items:flex-start}
+.contact-left{flex:2}
+.contact-right{flex:1}
+.contact-form label{display:block;margin-bottom:10px}
+.contact-form input, .contact-form textarea, .contact-form select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--white)}
+.contact-form textarea{min-height:140px;resize:vertical}
+.contact-card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
+
+/* FOOTER */
+.footer{background:#070707;color:var(--gray);padding:28px 0;margin-top:40px;text-align:center}
+.footer-inner{display:flex;flex-direction:column;gap:8px}
+
+/* small screens */
+@media (max-width:880px){
+  .hero-inner{flex-direction:column-reverse;padding-top:20px}
+  .about-inner{flex-direction:column}
+  .contact-inner{flex-direction:column}
+  .menu{display:none}
+  .nav-toggle{display:block}
+  .hero-title{font-size:34px}
+}
+
+/* tiny */
+@media (max-width:420px){
+  .hero-title{font-size:28px}
+  .btn-row{flex-direction:column}
+  .gold-btn, .outline-btn{width:100%;text-align:center}
+}
